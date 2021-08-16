@@ -1,5 +1,6 @@
 const boardHolder = document.querySelector("#board")
 
+
 function createBoard(size) {
 for (let i = 0; i < size; i++){
     for (let j = 0; j < size; j++) {
@@ -21,11 +22,9 @@ function changeColor(e) {
 let size = 16;
 createBoard(size);
 
-
-
  const clearButton = document.querySelector("#clear");
  clearButton.addEventListener("click", function clearGrid(){
-    boardTiles.forEach(boardTile => boardTile.style.backgroundColor = "transparent");
+    boardTiles.forEach(boardTile => boardTile.remove())
     let gridSize = 0;
     while (gridSize === 0 || gridSize >100 ) {
         gridSize = prompt("Enter size of grid");
@@ -33,6 +32,6 @@ createBoard(size);
     createBoard(gridSize);
     const board = document.querySelector("#board");    
     board.setAttribute('style',
-    'grid-template-columns: repeat(' + gridSize + ', auto)',
+    'grid-template-columns: repeat(' + gridSize + ', minmax(auto, 1fr))',
     'grid-template-rows: repeat(' + gridSize + ', auto)');
  });
