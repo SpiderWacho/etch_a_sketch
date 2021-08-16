@@ -10,13 +10,29 @@ for (let i = 0; i < size; i++){
     }
 }
 boardTiles = document.querySelectorAll(".boardDiv");
-boardTiles.forEach(boardTile => { boardTile.addEventListener("mouseenter", changeColor)     
+boardTiles.forEach(boardTile => { boardTile.addEventListener("mouseenter", paintBlack)     
 });
 }
 
-function changeColor(e) {
+function paintBlack(e) {
     e.target.style.backgroundColor = "black";
 }
+
+
+
+function random_rgba() {
+    let o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+function paintColor(e) {
+    let color = random_rgba();
+    e.target.style.backgroundColor = color;
+}
+
+
+
+
 
 //Initial size
 let size = 16;
@@ -31,7 +47,23 @@ createBoard(size);
     }
     createBoard(gridSize);
     const board = document.querySelector("#board");    
-    board.setAttribute('style',
-    'grid-template-columns: repeat(' + gridSize + ', minmax(auto, 1fr))',
-    'grid-template-rows: repeat(' + gridSize + ', auto)');
+    board.setAttribute("style",
+    "grid-template-columns: repeat(" + gridSize + ", minmax(auto, 1fr))",
+    "grid-template-rows: repeat(" + gridSize + ", auto)");
  });
+
+ const rgbButton = document.querySelector("#rgb");
+ rgbButton.addEventListener("click", function changeToColor(){
+    boardTiles = document.querySelectorAll(".boardDiv");
+    boardTiles.forEach(boardTile => { boardTile.removeEventListener("mouseenter", paintBlack)});
+    boardTiles.forEach(boardTile => { boardTile.addEventListener("mouseenter", paintColor)});     
+
+ });
+
+ const blackButton = document.querySelector("#black");
+ blackButton.addEventListener("click", function changeToBlack(){
+    boardTiles = document.querySelectorAll(".boardDiv");
+    boardTiles.forEach(boardTile => { boardTile.removeEventListener("mouseenter", paintColor)});
+    boardTiles.forEach(boardTile => { boardTile.addEventListener("mouseenter", paintBlack)});     
+ });
+
