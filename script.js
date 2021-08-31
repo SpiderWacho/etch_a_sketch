@@ -42,7 +42,7 @@ createBoard(size);
  clearButton.addEventListener("click", function clearGrid(){
     boardTiles.forEach(boardTile => boardTile.remove())
     let gridSize = 0;
-    while (gridSize === 0 || gridSize >100 ) {
+    while (gridSize === 0 || gridSize >100 || isNaN(gridSize) || gridSize === null || gridSize === "") {
         gridSize = prompt("Enter size of grid");
     }
     createBoard(gridSize);
