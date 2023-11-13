@@ -1,309 +1,155 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,300&display=swap');
 
-@media only screen and (max-width: 600px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(169, 209, 209);
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    #controls{
-        width: 100vw;
-        height: 30vh;
-    }
 
-    #title {
-        width: 100vw;
-    }
+body {
+    background-color: rgb(169, 209, 209);
 
-    h1 {
-        font-size: 4em;
-        text-align: center;
-        margin: 0px;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-    }
-        
-    p {
-        font-size: 1em;
-        text-align: center;
-        margin: 0px 0px 5% 0;
-    }
+}
+.content-container {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
 
-    #buttons {
-        display: flex;
+
+#title {
+    width: 100%;
+    margin-top: 25px;
+    color: black;
+    font-size: 3em; 
+}
+
+h1 {
+
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+    
+.text-info {
+    font-size: rem;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.controls-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn-container {    
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 75%;
+    height: 50%;
+}
+
+.controls {
+    width: 150px;
+    height: 70%;
+    background-color: coral;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 1px 1.5px black;
+}
+
+.controls:hover {
+    background-color: rgb(255, 192, 169);
+    transform: scale(1.2);
+    box-shadow: 0px 0px 3px 1px black;
+}
+
+
+.board-container {
+    margin-top: 100px;
+    margin-right: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    border: 2px solid black;
+    box-shadow: 0px 0px 1px 1px black;
+    
+}
+#board {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: white;
+    grid-template-columns: repeat(16, minmax(auto, 1fr));
+    display: inline-grid;
+
+}
+
+.boardDiv {
+    border: 0px;
+    margin: 0px;
+}
+
+.footer {
+    width: 100%;
+    margin-top: 25px;
+    font-size: .8rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 950px) {
+    .content-container {
         flex-direction: row;
         justify-content: space-evenly;
     }
 
-    .controls {
-        width: 20%;
-        height: 20%;
-        background-color: coral;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        box-shadow: 0px 0px 1px 1.5px black;
-    }
-
-    .controls:hover {
-        background-color: rgb(255, 192, 169);
-        transform: scale(1.2);
-        box-shadow: 0px 0px 3px 1px black;
-    }
-
-    #board {
-        height: 50vh;
-        width: 70vw;
-        display: inline-grid;
-        grid-template-columns: repeat(16, minmax(auto, 1fr));
-        background-color: white;
-        border: 2px solid black;
-        box-shadow: 0px 0px 1px 1px black;
-        
-    }
-
-    .boardDiv {
-        border: 0px;
-        margin: 0px;
-    }
-} 
-
-@media only screen and (min-width: 600px) {
-    body {
-        display: flex;
+    .btn-container {
         flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
-        background-color: rgb(169, 209, 209);
+        align-items: center;
+        height: 100%;
     }
-
-    #controls{
-        width: 100vw;
-        height: 30vh;
-    }
-
-    #title {
-        width: 100vw;
-    }
-
-    h1 {
-        font-size: 4em;
-        text-align: center;
-        margin: 0px;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-    }
-        
-    p {
-        font-size: 1em;
-        text-align: center;
-        margin: 0px 0px 5% 0;
-    }
-
-    #buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .controls {
-        width: 20%;
-        height: 20%;
-        background-color: coral;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        box-shadow: 0px 0px 1px 1.5px black;
-    }
-
-    .controls:hover {
-        background-color: rgb(255, 192, 169);
-        transform: scale(1.2);
-        box-shadow: 0px 0px 3px 1px black;
-    }
-
     #board {
+        width: 70%;
+        height: 100%;
+    }
+
+    .controls-container{
+        width: 30%;
+
+    }
+    .board-container {
         height: 60vh;
-        width: 70vw;
-        display: inline-grid;
-        grid-template-columns: repeat(16, minmax(auto, 1fr));
-        background-color: white;
-        border: 2px solid black;
-        box-shadow: 0px 0px 1px 1px black;
-        
-    }
-
-    .boardDiv {
-        border: 0px;
-        margin: 0px;
+        width: calc(50% - 25px);
+        margin-right: 25px;
     }
 }
 
-@media only screen and (min-width: 768px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(169, 209, 209);
-    }
-
-    #controls{
-        width: 100vw;
-        height: 35vh;
-        justify-self: flex-start;
-        position: relative;
-        top: 0;
-    }
-
-    #title {
-        width: 100vw;
-    }
-
-    h1 {
-        font-size: 7em;
-        text-align: center;
-        margin: 0px;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-    }
-        
-    p {
-        font-size: 1.5em;
-        text-align: center;
-        margin: 0px 0px 5% 0;
-    }
-
-    #buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .controls {
-        width: 25%;
-        height: 4em;
-        background-color: coral;
-        border: none;
-        border-radius: 10px;
-        font-size: 2em;
-        box-shadow: 0.5px 0.5px 1px 3px grey;
-    }
-
-    .controls:hover {
-        background-color: rgb(255, 192, 169);
-        transform: scale(1.2);
-        box-shadow: 0px 0px 3px 1px black;
-    }
-
-    #board {
-        height: 38vh;
-        width: 70vw;
-        display: inline-grid;
-        grid-template-columns: repeat(16, minmax(auto, 1fr));
-        background-color: white;
-        border: 2.5px solid black;
-        box-shadow: 0px 0px 1px 1px black;
-        
-    }
-
-    .boardDiv {
-        border: 0px;
-        margin: 0px;
-    }
-
-    #name {
-        align-self: center;
-        justify-self: flex-end;
-        position: fixed;
-        bottom: 0;
-    }
-}
-
-
-@media only screen and (min-width: 992px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(169, 209, 209);
-    }
-
-    #controls{
-        width: 100vw;
-        height: 25vh;
-    }
-
-    #title {
-        width: 100vw;
-    }
-
-    h1 {
-        font-size: 10em;
-        text-align: center;
-        margin: 0px;
-        font-family: 'Lato', sans-serif;
-        font-weight: bold;
-    }
-        
-    p {
-        font-size: 1.5em;
-        text-align: center;
-        margin: 0px 0px 2em 0;
-    }
-
-    #buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .controls {
-        width: 14%;
-        height: 3em;
-        background-color: coral;
-        border: none;
-        border-radius: 5px;
-        font-size: 2em;
-        box-shadow: 1px 1px 1px 0.5px black;
-    }
-
-    .controls:hover {
-        background-color: rgb(255, 192, 169);
-        transform: scale(1.1);
-        box-shadow: 0px 0px 3px 1px black;
-    }
-
-    #board {
+@media screen and (min-width: 1200px) {
+    .board-container {
         height: 70vh;
-        width: 40vw;
-        display: inline-grid;
-        grid-template-columns: repeat(16, minmax(auto, 1fr));
-        background-color: white;
-        border: 2px solid black;
-        box-shadow: 0px 0px 1px 1px black;
-        
-    }
-
-    .boardDiv {
-        border: 0px;
-        margin: 0px;
-    }
-
-    #name {
-        align-self: center;
-        justify-self: flex-end;
-        margin: 0.5px;
-        bottom: 0;
-        position: fixed;
+        width: calc(40% - 25px);
     }
 }

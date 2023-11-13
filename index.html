@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="script.js" defer></script>
         <title>Etch a Sketch</title>
     </head>
     <body>
-        <div id="controls">
-            <div id="title">
+        <div id="title">
             <h1>Etch a Sketch</h1>
-            </div>
-            <p>Hint: Press clear to create a new grid</p>
-            <div id="buttons">
-                <input type="button" class="controls" value="Clear" id="clear" name="clear">
-                <input type="button" class="controls" value="Black Mode" id="black" name="black">
-                <input type="button" class="controls" value="Rgb Mode" id="rgb" name="rgb">
-            </div>
         </div>
-        <div id="board">
+
+        <div class="content-container">
+            <div class="controls-container">
+                <p class="text-info">Hint: Press clear to create a new grid</p>
+                <div class="btn-container">
+                    <input type="button" class="controls" value="Clear" id="clear" name="clear">
+                    <input type="button" class="controls" value="Black Mode" id="black" name="black">
+                    <input type="button" class="controls" value="Rgb Mode" id="rgb" name="rgb">
+                </div>
+            </div>
+                <div class="board-container">
+                    <div id="board">
+                    </div>
+                </div>
         </div>
-        <p id="name">©Gaston Vecchio 2021</p>
+        <div class="footer">
+            <p id="name" >©Gaston Vecchio 2021</p>
+        </div>
+
         
     </body>
     </html>
